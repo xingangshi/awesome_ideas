@@ -2,7 +2,7 @@
 
 i=0
 icon=''
-arr=('|' '/' '-' '\' '|')
+arr=('|' '/' '-' '\')
 index=0
 
 cur_time_stamp=`date +%s`
@@ -19,11 +19,11 @@ echo -e ""
 while [ $i -le 50 ]
 do
   ((i++))
-  index=`echo $i%5`
+  index=`echo $cur_time_stamp%4`
   if [ $i -le $((50 - $(($percentage / 2)))) ]; then
-    icon='#'$icon
+    icon='.'$icon
   else
-    icon='>'$icon
+    icon=':'$icon
   fi
 done
 printf "[\033[32m%-50s\033[0m] Year Progress [ \033[31m%d%%\033[0m ] [%c]\r" "$icon" "$percentage" "${arr[$index]}"
