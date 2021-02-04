@@ -21,7 +21,7 @@ do
   ((i++))
   index=`echo $cur_time_stamp%4`
   if [ $i -le $((50 - $(($percentage / 2)))) ]; then
-    icon='.'$icon
+    icon='·'$icon
   else
     icon=':'$icon
   fi
