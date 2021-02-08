@@ -1,0 +1,58 @@
+#
+# 1. add the language support into .emacs file:
+#    ```
+#    (org-babel-do-load-languages
+#       'org-babel-load-languages
+#       '((emacs-lisp . nil)
+#         (shell . t)
+#         (R . t))) 
+# 
+# 2. then add cods into the *.org file, syntax as followig
+#
+#    #+begin_src language_type [:result output]
+#      ...
+#      codes
+#      ...
+#    #+end_src
+#
+# 3. open *.org file and execute block code with `C-c C-c` when cursor in `#+begin_src ...` 
+
+#+begin_src sh :results output
+  echo "This file takes up `du -h org-babel.org |sed 's/\([0-9k]*\)[ ]*org-babel.org/\1/'`"
+  echo "This is a bable for org test"
+#+end_src
+
+#+RESULTS:
+: This file takes up 
+: This is a bable for org test
+
+
+#+NAME: many-cols
+| a | b | c |
+|---+---+---|
+| d | e | f |
+|---+---+---|
+| g | h | i |
+
+#+NAME: no-hline
+#+BEGIN_SRC python :var tab=many-cols :hlines no
+  return tab
+#+END_SRC
+
+#+RESULTS: no-hline
+| a | b | c |
+| d | e | f |
+| g | h | i |
+
+#+NAME: hlines
+#+BEGIN_SRC python :var tab=many-cols :hlines yes
+  return tab
+#+END_SRC
+
+#+RESULTS: hlines
+| a | b | c |
+|---+---+---|
+| d | e | f |
+|---+---+---|
+| g | h | i |
+
