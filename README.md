@@ -42,3 +42,10 @@ E: Sub-process /usr/bin/dpkg returned an error code (1)
 > For example:
 
 `C:\Users\<username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState`
+
+### Mac 下 vscode 和 sublime 等宽字体设置
+> 等距更纱黑体 SC（字体名称配置为 'Sarasa Mono SC'）
+>
+>  'Sarasa Mono SC' 字体系统是默认没有的，需要自行下载安装，该字体为 Github 上的一个开源字体，https://github.com/be5invis/Sarasa-Gothic/releases，选择最新版本下载安装即可。
+#### Mac 下字体安装
+> 打开 `字体册.app`，下载任意字体后，添加即可，详情见 [字体册使用手册](https://support.apple.com/zh-cn/guide/font-book/welcome/mac)。 
