@@ -49,3 +49,16 @@ E: Sub-process /usr/bin/dpkg returned an error code (1)
 >  'Sarasa Mono SC' 字体系统是默认没有的，需要自行下载安装，该字体为 Github 上的一个开源字体，[更纱字体](https://github.com/be5invis/Sarasa-Gothic/releases)，选择最新版本下载安装即可。
 #### Mac 下字体安装
 > 打开 `字体册.app`，下载任意字体后，添加即可，详情见 [字体册使用手册](https://support.apple.com/zh-cn/guide/font-book/welcome/mac)。 
+
+### 电脑清理
+#### Windows 清理软件
+> 1. [Dism++](https://www.chuyu.me/zh-Hans/)
+>
+> 2. [Cleanmgr+](https://www.softpedia.com/get/Security/Secure-cleaning/Cleanmgr.shtml)
+
+#### Mac 清理软件
+> 1. [cleanmymac](https://cleanmymac.cn/)
+>
+> 2. [OmniDiskSweeper](https://www.omnigroup.com/more)
+>
+> 3. [柠檬清理](https://lemon.qq.com/)
