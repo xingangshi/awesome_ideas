@@ -62,3 +62,16 @@ E: Sub-process /usr/bin/dpkg returned an error code (1)
 > 2. [OmniDiskSweeper](https://www.omnigroup.com/more)
 >
 > 3. [柠檬清理](https://lemon.qq.com/)
+
+### 创建一个临时的大文件，作为系统缓冲区
+> 创建一个 8G 的临时文件
+>
+> 1. `dd` 命令
+>>
+>> `dd if=/dev/zero of=tmp.txt bs=1000M count=8`
+>
+> 2. `fallocate` 和 `truncate` 命令组合
+>>
+>> 增： `fallocate -l 8G tmp.txt`
+>>
+>> 删： `truncate -s 0 tmp.txt`
