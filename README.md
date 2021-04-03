@@ -75,3 +75,8 @@ E: Sub-process /usr/bin/dpkg returned an error code (1)
 >> 增： `fallocate -l 8G tmp.txt`
 >>
 >> 删： `truncate -s 0 tmp.txt`
+
+### MacBook 散热 声音很大 风扇狂转，CPU占用很高 
+>> 1. 查询计划任务， 打开终端，输入 `pmset -g sched`；
+>>
+>> 2. 输入：`sudo pmset schedule cancelall` 取消所有的计划任务 或者 `sudo pmset schedule cancel` 取消指定的计划任务。
