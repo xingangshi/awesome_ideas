@@ -1,8 +1,18 @@
-# dustbin
+# 垃圾桶
 
 All somethings are not archived or not systemized.
 
----
+## git 提交空的信息
+
+1. `git commit` 空的提交，可以用来触发项目自动化构建相关的流程
+```
+git commit --allow-empty -m "空的提交信息"
+```
+
+2. 提交一个空信息来初始化一个项目
+```
+git init && git commit -m "初始化一个空项目" --allow-empty
+```
 
 ## Github
 
