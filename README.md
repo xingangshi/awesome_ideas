@@ -138,3 +138,16 @@ DD9AF44B 99C49590 D2DBDEE1 75860FD2
 0.0.0.0 45.55.255.55
 0.0.0.0 45.55.41.223
 ```
+
+## [Logseq](https://logseq.com/)
+
+### [Logseq 网页版](https://logseq.xyz/)（官网已不支持网页版）
+
+### 资料
+1. [Logseq 查询（Advanced Queries）](https://logseq.github.io/#/page/advanced%20queries)
+2. [Logseq 查询（Queries）](https://logseq.github.io/#/page/Queries)
+
+### 笔记
+#### 如何使用第三方插件
+`设置` --> `高级设置` --> `Plugin-in system` 开关，打开 --> 重启 --> 就可以看到 `插件` 的选项。
+![图示](https://raw.githubusercontent.com/apanshi/pics_center/master/tools/logseq_open_plugins_setting.png)
