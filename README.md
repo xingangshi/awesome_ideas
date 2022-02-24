@@ -164,3 +164,33 @@ bash: /etc/ld.so.conf: Permission denied
 ```bash
 sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
 ```
+
+### 2. 终端颜色配置 `Monokai-panshi`
+
+主要解决 原生 `Monokai` 配置下，高亮红色时，在 `vim` 下显示错误提示时无法看清楚错误的字符串。
+
+```json
+        {
+            "background": "#272822",
+            "black": "#3E3D32",
+            "blue": "#03395C",
+            "brightBlack": "#272822",
+            "brightBlue": "#66D9EF",
+            "brightCyan": "#66D9EF",
+            "brightGreen": "#A6E22E",
+            "brightPurple": "#AE81FF",
+            "brightRed": "#F2BDF9",
+            "brightWhite": "#F8F8F2",
+            "brightYellow": "#FD971F",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#66D9EF",
+            "foreground": "#F8F8F2",
+            "green": "#A6E22E",
+            "name": "Monokai-panshi",
+            "purple": "#AE81FF",
+            "red": "#F92672",
+            "selectionBackground": "#FFFFFF",
+            "white": "#F8F8F2",
+            "yellow": "#FFE792"
+        }
+```
