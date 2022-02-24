@@ -151,3 +151,16 @@ DD9AF44B 99C49590 D2DBDEE1 75860FD2
 #### 如何使用第三方插件
 `设置` --> `高级设置` --> `Plugin-in system` 开关，打开 --> 重启 --> 就可以看到 `插件` 的选项。
 ![图示](https://raw.githubusercontent.com/apanshi/pics_center/master/tools/logseq_open_plugins_setting.png)
+
+## Linux tips
+
+### 1. `"Permission denied" error when editing /etc/ld.so.conf`
+执行报错
+```bash
+sudo echo '/usr/local/lib' >> /etc/ld.so.conf 
+bash: /etc/ld.so.conf: Permission denied
+```
+修复方式
+```bash
+sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
+```
