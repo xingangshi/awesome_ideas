@@ -172,9 +172,9 @@ sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
 ```json
         {
             "background": "#272822",
-            "black": "#3E3D32",
+            "black": "#000000",
             "blue": "#03395C",
-            "brightBlack": "#272822",
+            "brightBlack": "#848773",
             "brightBlue": "#66D9EF",
             "brightCyan": "#66D9EF",
             "brightGreen": "#A6E22E",
