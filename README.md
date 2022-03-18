@@ -151,3 +151,67 @@ DD9AF44B 99C49590 D2DBDEE1 75860FD2
 #### 如何使用第三方插件
 `设置` --> `高级设置` --> `Plugin-in system` 开关，打开 --> 重启 --> 就可以看到 `插件` 的选项。
 ![图示](https://raw.githubusercontent.com/apanshi/pics_center/master/tools/logseq_open_plugins_setting.png)
+
+## Linux tips
+
+### 1. `"Permission denied" error when editing /etc/ld.so.conf`
+执行报错
+```bash
+sudo echo '/usr/local/lib' >> /etc/ld.so.conf 
+bash: /etc/ld.so.conf: Permission denied
+```
+修复方式
+```bash
+sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
+```
+
+### 2. 终端颜色配置 `Monokai-panshi`
+
+主要解决 原生 `Monokai` 配置下，高亮红色时，在 `vim` 下显示错误提示时无法看清楚错误的字符串。
+
+```json
+        {
+            "background": "#272822",
+            "black": "#000000",
+            "blue": "#03395C",
+            "brightBlack": "#848773",
+            "brightBlue": "#66D9EF",
+            "brightCyan": "#66D9EF",
+            "brightGreen": "#A6E22E",
+            "brightPurple": "#AE81FF",
+            "brightRed": "#F2BDF9",
+            "brightWhite": "#F8F8F2",
+            "brightYellow": "#FD971F",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#66D9EF",
+            "foreground": "#F8F8F2",
+            "green": "#A6E22E",
+            "name": "Monokai-panshi",
+            "purple": "#AE81FF",
+            "red": "#F92672",
+            "selectionBackground": "#FFFFFF",
+            "white": "#F8F8F2",
+            "yellow": "#FFE792"
+        }
+```
+
+### 3. 部分网友的逻辑（Github mermaid 测试）
+
+```mermaid
+graph LR
+    O([乌克兰 死了活该])
+    A[乌克兰] --> B{是否抵抗} 
+    B --> |否| C[[没有准备就挑衅]]
+    C --> K[俄罗斯]
+    K --> M((死了活该))
+    B --> |是| D{抵抗是否顽强}
+    D --> |否| E[[没有实力就挑衅]]
+    E --> K
+    D --> |是| F{有无西方武器}
+    F --> |无| G{西方是否出兵}
+    G --> |否| H[被西方耍了 傻逼 竟然挑衅]
+    H --> K
+    F --> |有| J[[不出所料 勾结西方 威胁]]
+    J --> K
+    G --> |是| J
+```
