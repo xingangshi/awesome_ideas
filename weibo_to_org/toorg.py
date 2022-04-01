@@ -4,7 +4,7 @@
 
 from bs4 import BeautifulSoup
 
-soup = BeautifulSoup(open("weibo_01_finish.html"), "lxml")
+soup = BeautifulSoup(open("磐石说_01_finish.html"), "lxml")
 
 data_list = {}
 for data in soup.find_all(name='article'):
