@@ -28,6 +28,19 @@ git branch -d branch_name
 git push origin --delete branch_name
 ```
 
+### 修改完善提交
+```bash
+# 一个 feature 开发完了，已经提交，但是没有 push，突然又想去完善，可以使用
+git add .
+# 将修改直接合并到上一个 commit，并且使用上次的提交
+git commit --amend --no-edit
+```
+
+### 非默认的 ssh key clone 或 push
+```bash
+GIT_SSH_COMMAND='ssh -i ~/.ssh/another_private_key’ git push
+```
+
 ## Github
 
 [GitHub 上编写和格式化](https://docs.github.com/cn/github/writing-on-github/getting-started-with-writing-and-formatting-on-github)
