@@ -2,7 +2,9 @@
 
 All somethings are not archived or not systemized.
 
-## git 提交空的信息
+## git Notes
+
+### git 提交空的信息
 
 1. `git commit` 空的提交，可以用来触发项目自动化构建相关的流程
 ```
@@ -12,6 +14,18 @@ git commit --allow-empty -m "空的提交信息"
 2. 提交一个空信息来初始化一个项目
 ```
 git init && git commit -m "初始化一个空项目" --allow-empty
+```
+
+### git 删除分支
+
+1. 删除本地分支
+```bash
+git branch -d branch_name
+```
+
+2. 删除远程分支
+```bash
+git push origin --delete branch_name
 ```
 
 ## Github
