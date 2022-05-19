@@ -157,7 +157,7 @@ DD9AF44B 99C49590 D2DBDEE1 75860FD2
 ### 1. `"Permission denied" error when editing /etc/ld.so.conf`
 执行报错
 ```bash
-sudo echo '/usr/local/lib' >> /etc/ld.so.conf 
+sudo echo '/usr/local/lib' >> /etc/ld.so.conf
 bash: /etc/ld.so.conf: Permission denied
 ```
 修复方式
@@ -200,7 +200,7 @@ sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
 ```mermaid
 graph LR
     O([乌克兰 死了活该])
-    A[乌克兰] --> B{是否抵抗} 
+    A[乌克兰] --> B{是否抵抗}
     B --> |否| C[[没有准备就挑衅]]
     C --> K[俄罗斯]
     K --> M((死了活该))
@@ -215,3 +215,5 @@ graph LR
     J --> K
     G --> |是| J
 ```
+
+## [Docker 下 redis 集群部署](/docker_redis.md)
