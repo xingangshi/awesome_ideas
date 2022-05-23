@@ -41,6 +41,11 @@ git commit --amend --no-edit
 GIT_SSH_COMMAND='ssh -i ~/.ssh/another_private_key’ git push
 ```
 
+### 更改 repo 远程仓库地址
+```bash
+git remote set-url origin new_git_repo_url
+```
+
 ## Github
 
 [GitHub 上编写和格式化](https://docs.github.com/cn/github/writing-on-github/getting-started-with-writing-and-formatting-on-github)
