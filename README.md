@@ -46,6 +46,11 @@ GIT_SSH_COMMAND='ssh -i ~/.ssh/another_private_key’ git push
 git remote set-url origin new_git_repo_url
 ```
 
+### git 快速切换到上一个使用的分支
+```bash
+git checkout -
+```
+
 ## Github
 
 [GitHub 上编写和格式化](https://docs.github.com/cn/github/writing-on-github/getting-started-with-writing-and-formatting-on-github)
