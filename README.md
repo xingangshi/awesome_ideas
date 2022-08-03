@@ -19,9 +19,17 @@ git init && git commit -m "初始化一个空项目" --allow-empty
 ### git 删除分支
 
 1. 删除本地分支
+
+删除本地分支，必须合并过的
 ```bash
 git branch -d branch_name
 ```
+ 
+删除本地分支，强制删除
+```bash
+git branch -D branch_name
+```
+``` -D ： --delete --force ```
 
 2. 删除远程分支
 ```bash
