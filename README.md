@@ -28,6 +28,29 @@ git branch -d branch_name
 git push origin --delete branch_name
 ```
 
+或者
+
+```bash
+git push origin :branch_name
+```
+
+3. 批量删除本地分支
+
+3.1 有规则的情况下
+```bash
+git branch -a | grep 'feature/test' | xargs git branch -D
+```
+
+3.2 排除法删除分支，保留指定分支
+```bash
+git branch -a | grep -v -E 'A|B' | xargs git branch -D
+```
+
+4. 批量删除远程分支
+```bash
+git branch -r | grep 'feature/LBSM-31' | sed 's/origin\///g' | xargs -I {} git push origin :{}
+```
+
 ### 修改完善提交
 ```bash
 # 一个 feature 开发完了，已经提交，但是没有 push，突然又想去完善，可以使用
