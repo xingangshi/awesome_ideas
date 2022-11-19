@@ -19,9 +19,17 @@ git init && git commit -m "初始化一个空项目" --allow-empty
 ### git 删除分支
 
 1. 删除本地分支
+
+删除本地分支，必须合并过的
 ```bash
 git branch -d branch_name
 ```
+ 
+删除本地分支，强制删除
+```bash
+git branch -D branch_name
+```
+``` -D ： --delete --force ```
 
 2. 删除远程分支
 ```bash
@@ -62,6 +70,16 @@ git commit --amend --no-edit
 ### 非默认的 ssh key clone 或 push
 ```bash
 GIT_SSH_COMMAND='ssh -i ~/.ssh/another_private_key’ git push
+```
+
+### 更改 repo 远程仓库地址
+```bash
+git remote set-url origin new_git_repo_url
+```
+
+### git 快速切换到上一个使用的分支
+```bash
+git checkout -
 ```
 
 ## Github
