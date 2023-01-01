@@ -26,6 +26,6 @@ do
     icon=':'$icon
   fi
 done
-printf "[\033[32m%-50s\033[0m] 2022 Year Progress [ \033[31m%d%%\033[0m ] [%c]\r" "$icon" "$percentage" "${arr[$index]}"
+printf "[\033[32m%-50s\033[0m] 2023 Year Progress [ \033[31m%d%%\033[0m ] [%c]\r" "$icon" "$percentage" "${arr[$index]}"
 echo -e "\n"
 
