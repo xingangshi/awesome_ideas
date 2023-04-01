@@ -23,7 +23,7 @@
 function auto_login_ssh(){
     expect -c "
     set timeout 3600;
-    spawn ssh -o StrictHostKeyChecking=no $2;
+    spawn ssh -o StrictHostKeyChecking=no $2 -p $3;
     expect {
         *assword:* {
             send $1\r;
@@ -34,10 +34,11 @@ function auto_login_ssh(){
     return $?
 }
 
-declare -a hostInfoDict
+declare -A hostInfoDict
 
 hostInfoDict=(
-    ["test001"]="192.168.0.1 test001 pwdtest001"
+    ["test001"]="192.168.0.1 22 test001 pwdtest001"
+    ["test002"]="192.168.0.2 32211 test002 pwdtest002"
 )
 
 sshHostIp=$1
@@ -60,7 +61,8 @@ path_info_arr=(${hostInfoDict[$sshHostIp]})
 IFS="$OLD_IFS"
 
 hostIP=${path_info_arr[0]}
-hostUser=${path_info_arr[1]}
-hostPassWD=${path_info_arr[2]}
+hostPort=${path_info_arr[1]}
+hostUser=${path_info_arr[2]}
+hostPassWD=${path_info_arr[3]}
 
-auto_login_ssh $hostPassWD $hostUser"@"$hostIP
+auto_login_ssh $hostPassWD $hostUser"@"$hostIP $hostPort
