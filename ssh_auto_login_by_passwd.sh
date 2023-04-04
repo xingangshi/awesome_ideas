@@ -35,6 +35,8 @@
 
 declare -A hostInfoDict
 
+defaultLoginServer="test001"
+
 hostInfoDict=(
     #["服务器别名"]=["认证方式（pwd/rsa） ip port 用户名 密码/密钥路径"]
     ["test001"]="pwd 192.168.0.1 22 test001 pwdtest001"
@@ -74,23 +76,59 @@ function help(){
     echo ".                                                                           "
     echo "终端跳板机                                                                  "
     echo ".                                                                           "
-    echo "使用：                                                                      "
+    echo "使用： ssh_auto_login_by_passwd.sh [options] [target]                       "
+    echo ".                                                                           "
     echo "  仅需打开编辑此文件，在 \`hostInfoDict\` 配置中 设置服务器信息，如下：     "
     echo "     [\"服务器别名\"]=[\"认证方式（pwd/rsa） ip port 用户名 密码/密钥路径\"]"
     echo ".                                                                           "
-    echo "然后终端输入即可登录，例如：                                                "
-    echo "  \`\$bash ssh_auto_login_by_passwd.sh test001\`                            "
+    echo "  然后终端输入即可登录，例如：                                              "
+    echo "    \`\$bash ssh_auto_login_by_passwd.sh test001\`                          "
+    echo ".                                                                           "
+    echo "Options:                                                                    "
+    echo "  -h, --help 显示帮助文档                                                   "
+    echo "  -s, --show 显示当前配置的服务器信息                                       "
+    echo ".                                                                           "
+    echo "target:                                                                     "
+    echo "  \`hostInfoDict\` 中配置的 服务器别名，可以在配置中指定默认的登录服务器    "
     echo ".                                                                           "
 }
 
-if [ $1 == "-h" -o $1 == "--help" ]; then
+function show_server_info(){
+    echo "All can used server infos:"
+    for key in "${!hostInfoDict[@]}"; do
+        OLD_IFS="$IFS"
+        IFS=" "
+        value=(${hostInfoDict[$key]})
+        IFS="$OLD_IFS"
+        echo -e "\tname $key ip:port ${value[1]}:${value[2]}"
+    done
+}
+
+function check_server_info(){
+  if [ -n "${hostInfoDict[$1]}" ]; then
+    echo 1
+  else
+    echo 0
+  fi
+}
+
+if [ "$1" == "-h" -o "$1" == "--help" ]; then
     help
+    exit 1
+elif [ "$1" == "-s" -o "$1" == "--show" ]; then
+    show_server_info
     exit 1
 fi
 
 sshHostIp=$1
 if [ $# -ne 1 ]; then
-    sshHostIp="test001"
+    sshHostIp=$defaultLoginServer
+fi
+
+status=`check_server_info $sshHostIp`
+if [ $status == 0 ]; then
+  echo "server name $sshHostIp is not OK!"
+  exit 1
 fi
 
 echo "Server Name : " $sshHostIp
