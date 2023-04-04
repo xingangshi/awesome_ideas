@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # 终端跳板机
-# 
+#
 # 需求来源于：
 #   跳板机只能通过用户名密码的形式登录，终端下实在不想每次输入密码，又没法通过 `~/.ssh/config` 中增加配置完成。
 #
@@ -13,7 +13,7 @@
 # 使用：
 #   仅需打开编辑此文件，在 `hostInfoDict` 配置中 设置服务器信息，如下：
 #       ["服务器别名"]=["认证方式（pwd/rsa） ip port 用户名 密码/密钥路径"]
-#   
+#
 #  然后终端输入即可登录，例如：
 #   `$bash ssh_auto_login_by_passwd.sh test004`
 
@@ -77,7 +77,7 @@ function help(){
     echo "使用：                                                                      "
     echo "  仅需打开编辑此文件，在 \`hostInfoDict\` 配置中 设置服务器信息，如下：     "
     echo "     [\"服务器别名\"]=[\"认证方式（pwd/rsa） ip port 用户名 密码/密钥路径\"]"
-    echo ".                                                                           " 
+    echo ".                                                                           "
     echo "然后终端输入即可登录，例如：                                                "
     echo "  \`\$bash ssh_auto_login_by_passwd.sh test001\`                            "
     echo ".                                                                           "
