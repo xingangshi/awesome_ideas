@@ -35,14 +35,14 @@
 
 declare -A hostInfoDict
 
-defaultLoginServer="94"
+defaultLoginServer="test001"
 
 hostInfoDict=(
     #["服务器别名"]=["认证方式（pwd/rsa） ip port 用户名 密码/密钥路径"]
-    ["jps"]="pwd 192.168.104.26 22 s1635 Sxg_0004352#T"
-    ["94"]="pwd 192.168.104.94 32200 s1635 s1635"
-    ["opc"]="rsa 150.230.196.153 22 opc ~/.ssh/id_rsa_qys"
-    ["r94"]="rsa 192.168.104.94 32200 s1635 ~/.ssh/id_rsa_sxg"
+    ["test001"]="pwd 192.168.0.1 22 test001 pwdtest001"
+    ["test002"]="pwd 192.168.0.2 32211 test002 pwdtest002"
+    ["test003"]="rsa 192.168.0.1 22 test003 ~/.ssh/id_rsa"
+    ["test004"]="rsa 192.168.0.2 32211 test004 ~/.ssh/id_rsa_test004"
 )
 
 function auto_login_ssh_pwd(){
@@ -79,9 +79,8 @@ function help(){
     echo "使用： ssh_auto_login_by_passwd.sh                                          "
     #echo "使用： ssh_auto_login_by_passwd.sh [options] [target]                       "
     echo ".                                                                           "
-    echo "设置服务器配置                                                              "
-    echo ".                                                                           "
-    echo "  仅需打开编辑此文件，在 \`hostInfoDict\` 配置中 设置服务器信息，如下：     "
+    echo "初次使用，请设置服务器配置：                                                "
+    echo "  仅需打开编辑此文件，在 \"hostInfoDict\" 配置中 设置服务器信息，如下：     "
     echo "     [\"服务器别名\"]=[\"认证方式（pwd/rsa） ip port 用户名 密码/密钥路径\"]"
     echo ".                                                                           "
     #echo "  然后终端输入即可登录，例如：                                              "
@@ -104,7 +103,6 @@ function show_server_info(){
         IFS="$OLD_IFS"
         printf "\t名称： %-5s 信息（ip:port）： %-25s\n" $key ${value[1]}:${value[2]}
     done
-    echo -e "\n"
 }
 
 function check_server_info(){
@@ -122,9 +120,10 @@ echo ".                                                                         
 echo "                          《终端跳板机》                                    "
 help
 
-echo -e "\n当前服务器列表：\n"
+echo -e "当前服务器列表：\n"
 show_server_info
 
+echo -e ""
 echo -n "请选择你要登录的服务器名称（回车或 q 退出）: "
 read sshHostIp
 
