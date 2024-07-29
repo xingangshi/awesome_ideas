@@ -2,6 +2,22 @@
 
 All somethings are not archived or not systemized.
 
+##
+
+### importError: cannot import name 'ParameterSource' from 'click.core'
+
+[解决方案](https://github.com/psf/black/issues/3111)
+
+Please uninstall black and click, Then install both to its the latest version will solve this issue.
+
+```bash
+pip uninstall black
+pip uninstall click
+
+pip install black
+pip install click
+```
+
 ## git Notes
 
 ### git 提交空的信息
