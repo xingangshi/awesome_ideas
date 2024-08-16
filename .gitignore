@@ -1,2 +1,4 @@
 scons/bin/
 grrs/target
+
+*.pyc
