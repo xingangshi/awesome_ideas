@@ -2,7 +2,18 @@
 
 All somethings are not archived or not systemized.
 
-##
+## 资料
+
+### 规范
+
+1. [如何维护更新日志 更新日志绝对不应该是 git 日志的堆砌物](https://keepachangelog.com/zh-CN/1.1.0/)
+
+### 开发合集
+
+1. [free-for.dev](https://free-for.dev/#/)
+
+
+## 问题处理
 
 ### importError: cannot import name 'ParameterSource' from 'click.core'
 
