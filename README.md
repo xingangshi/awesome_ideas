@@ -12,6 +12,9 @@ All somethings are not archived or not systemized.
 
 1. [free-for.dev](https://free-for.dev/#/)
 
+## ChatGpt prompt
+
+[Chatgpt 一些有用的 prompt](/chatgpt_prompt)
 
 ## 问题处理
 

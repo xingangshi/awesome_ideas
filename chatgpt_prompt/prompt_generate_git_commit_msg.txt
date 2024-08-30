@@ -1,0 +1,17 @@
+llm -m gemini-1.5-flash-latest <<EOF
+You need to generate a git commit message based on the following rules:
+1. Good git messages examples
+- feat: Add type annotation to generate_commit_message function
+- fix: Fix bug in generate_commit_message function
+- docs: Update README.md
+- feat: first commit
+- style: Format code using black
+- refactor: Refactor generate_commit_message function
+- ci: Add GitHub Actions workflow for Python package release
+- build: Update setup.py and add tests folder
+2. Please make the generate commit message into one line.
+3. the commit message should based on the diff content is following:
+\`\`\`
+$(git diff --cached --staged)
+\`\`\`
+EOF
