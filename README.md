@@ -18,6 +18,30 @@ All somethings are not archived or not systemized.
 
 ## 问题处理
 
+### [Git LFS](https://git-lfs.com/) error `Encountered x file(s) that should have been pointers, but weren't`
+
+```bash
+$ git reset --hard HEAD
+HEAD is now at 901b26383 Start work for preparing container project.
+Encountered 2 file(s) that should have been pointers, but weren't:
+    testdata.zip
+    container.zip
+```
+
+```bash
+1.
+$ git lfs migrate import --yes --no-rewrite "testdata.zip"
+$ git lfs migrate import --yes --no-rewrite "container.zip"
+2.
+$ git push
+3.
+$ git reflog expire --expire-unreachable=now --all
+$ git gc --prune=now
+4.
+$ git lfs ls-files
+$ git check-attr --all -- container.zip | grep "filter: lfs"
+```
+
 ### importError: cannot import name 'ParameterSource' from 'click.core'
 
 [解决方案](https://github.com/psf/black/issues/3111)
