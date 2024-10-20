@@ -18,6 +18,47 @@ All somethings are not archived or not systemized.
 
 ## 问题处理
 
+### YouTube API — 获取视频缩略图
+
+每个 YouTube 视频都有 4 个生成的图像。它们的格式可预测地如下所示：
+
+```bash
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/0.jpg 0-480x360
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/1.jpg 1-120x90
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/2.jpg 2-120x90
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/3.jpg 3-120x90
+```
+
+列表中的第一个是全尺寸图像，其余的是缩略图。默认缩略图（即 1.jpg、2.jpg、3.jpg 之一）是，default-120x90：
+
+```bash
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/default.jpg
+```
+
+对于高质量版本的缩略图，可以使用类似的 URL，hqdefault-480x360：
+
+```bash
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/hqdefault.jpg
+```
+
+还有中等质量版本的缩略图，可以使用类似的 URL，mqdefault-320x180：
+
+```bash
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/mqdefault.jpg 
+```
+
+对于标准定义版本的缩略图，可以使用类似的 URL，sddefault-640x480：
+
+```bash
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/sddefault.jpg
+```
+
+对于最大分辨率的缩略图，可以使用类似的 URL，maxresdefault-1280x720：
+
+```bash
+http://img.youtube.com/vi/<insert-youtube-video-id-here>/maxresdefault.jpg
+```
+
 ### [Git LFS](https://git-lfs.com/) error `Encountered x file(s) that should have been pointers, but weren't`
 
 ```bash
@@ -148,7 +189,7 @@ git checkout -
 
 ## U 盘启动盘制作工具
 
-1. [U盘启动盘制作工具](https://windows.pingsheme.com/up.html)
+1. [U 盘启动盘制作工具](https://windows.pingsheme.com/up.html)
 2. [win10 系统官网下载渠道](https://www.microsoft.com/zh-cn/software-download/windows10ISO)
 
 ## Debian install python3 error
@@ -220,9 +261,9 @@ E: Sub-process /usr/bin/dpkg returned an error code (1)
 >
 > 删： `truncate -s 0 tmp.txt`
 
-## MacBook 散热 声音很大 风扇狂转，CPU占用很高
+## MacBook 散热 声音很大 风扇狂转，CPU 占用很高
 
-> 1. 查询计划任务， 打开终端，输入 `pmset -g sched`；
+> 1. 查询计划任务，打开终端，输入 `pmset -g sched`；
 >
 > 2. 输入：`sudo pmset schedule cancelall` 取消所有的计划任务 或者 `sudo pmset schedule cancel` 取消指定的计划任务。
 
